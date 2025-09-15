@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: my-app
+    env: python  # or node, docker, etc.
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python3 app.py"
+    autoDeploy: true
+    previews:
+      enabled: true
