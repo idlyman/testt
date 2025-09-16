@@ -7,7 +7,7 @@ app = Flask(__name__)
 def whoami():
     client_ip = request.headers.get("X-Forwarded-For", request.remote_addr)
     client_port = request.environ.get("REMOTE_PORT")  # Flask doesn't expose port directly
-    print (client_ip, client_port)
+    print (client_ip, client_port, flush=True)
     time.sleep(30)
     return {"ip": client_ip, "port": client_port}
 
